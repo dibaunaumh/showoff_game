@@ -14,11 +14,27 @@
 </template>
 
 <template name="game">
-	<h2>Showoff-game</h2>
-	{{> controls}}
-  
-  <br/>
-  {{> showoff}}
+	<table>
+		<tr>
+			<td width="50%" valign="top">
+				<h2>Showoff-game</h2>
+				{{#if currentUser}}
+				{{> controls}}
+				{{/if}}
+			</td>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td width="50%" valign="top">
+				<canvas id="display"></canvas>
+			</td>
+			
+			<td valign="top">
+				{{> showoff}}
+			</td>
+	</table>
 </template>
 
 
@@ -53,7 +69,7 @@
   	</iframe>
   	{{/if}}
 	{{#unless current_showoff}}
-	<h2>Showoffs list</h2>
+	<h2>Showoffs</h2>
 	<ul>
 		{{#each list}}
 		<li>{{user_name}} showing off {{name}} ({{likes}} likes)

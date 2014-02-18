@@ -89,9 +89,11 @@ initDisplay = function() {
 	if (!ROT.isSupported()) {
 		alert("The rot.js library isn't supported by your browser.");
 	} else {
-		display = new ROT.Display({width:BOARD_WIDTH, height:BOARD_HEIGHT});
-		var container = display.getContainer();
-		document.body.appendChild(container);
+		display = new ROT.Display({
+				domElement: "display", 
+				width:BOARD_WIDTH, 
+				height:BOARD_HEIGHT
+			});
 	}
 	return display;
 }
