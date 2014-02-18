@@ -14,27 +14,12 @@
 </template>
 
 <template name="game">
-	<table>
-		<tr>
-			<td width="50%" valign="top">
-				<h2>Showoff-game</h2>
-				{{#if currentUser}}
-				{{> controls}}
-				{{/if}}
-			</td>
-			<td>
-				&nbsp;
-			</td>
-		</tr>
-		<tr>
-			<td width="50%" valign="top">
-				<canvas id="display"></canvas>
-			</td>
-			
-			<td valign="top">
-				{{> showoff}}
-			</td>
-	</table>
+	<h2>Showoff-game</h2>
+	{{#if currentUser}}
+		{{> controls}}
+	{{/if}}
+
+	{{> showoff}}
 </template>
 
 
@@ -61,21 +46,21 @@
 <template name="showoff">
     <div id="showoff">
     	{{#if current_showoff}}
-  	<h2>
-  		{{current_showoff.name}}
-  		<button class="btn btn-small" id="like"><i class="icon-thumbs-up"></i></button>
-  	</h2>
-  	<iframe width="100%" height="400px" src="{{showoff_url}}">
-  	</iframe>
-  	{{/if}}
-	{{#unless current_showoff}}
-	<h2>Showoffs</h2>
-	<ul>
-		{{#each list}}
-		<li>{{user_name}} showing off {{name}} ({{likes}} likes)
-		{{/each}}
-	</ul>
-	{{/unless}}
+  		<h4>
+  			{{current_showoff.name}}
+  			<button class="btn btn-small" id="like"><i class="icon-thumbs-up"></i></button>
+  		</h4>
+  		<iframe width="100%" height="400px" src="{{showoff_url}}">
+  		</iframe>
+  		{{/if}}
+		{{#unless current_showoff}}
+		<h2>Showoffs</h2>
+		<ul>
+			{{#each list}}
+			<li><img src="{{user_picture}}" alt="{{user_name}}" width="24px">{{name}} ({{likes}} likes)
+			{{/each}}
+		</ul>
+		{{/unless}}
     </div>
 </template>
 

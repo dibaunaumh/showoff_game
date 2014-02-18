@@ -711,8 +711,7 @@ window.cancelAnimationFrame =
  * @param {image} [options.tileSet=null]
  */
 ROT.Display = function(options) {
-	//var canvas = document.createElement("canvas");
-	var canvas = document.getElementById(options.domElement);
+	var canvas = document.createElement("canvas");
 	this._context = canvas.getContext("2d");
 	this._data = {};
 	this._dirty = false; /* false = nothing, true = all, object = dirty cells */

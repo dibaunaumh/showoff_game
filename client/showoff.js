@@ -20,6 +20,7 @@ Template.controls.events({
 		createShowoff({
 			user_id: p.user_id,
 			user_name: p.name,
+			user_picture: p.picture,
 			name: name,
 			likes: 0,
 			location: p.location,
@@ -41,7 +42,7 @@ Template.showoff.helpers({
 		}
 	},
 	"list": function() {
-		return Showoffs.find();
+		return Showoffs.find({}, {sort: {likes: -1}});
 	} 
 });
 
@@ -94,6 +95,7 @@ initDisplay = function() {
 				width:BOARD_WIDTH, 
 				height:BOARD_HEIGHT
 			});
+			document.body.appendChild(display.getContainer());
 	}
 	return display;
 }
