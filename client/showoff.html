@@ -4,6 +4,9 @@
 
 <body>
   {{> user_widget}}
+    <h2>Showoff-game</h2>	
+  <div id="display"></div>
+  
   {{> game}}
 </body>
 
@@ -14,15 +17,9 @@
 </template>
 
 <template name="game">
-	<h2>Showoff-game</h2>
-	
-	<div id="display"></div>
-	
 	{{#if currentUser}}
 		{{> controls}}
 	{{/if}}
-	
-	
 
 	{{> showoff}}
 </template>
