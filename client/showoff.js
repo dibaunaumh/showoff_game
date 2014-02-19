@@ -95,7 +95,7 @@ initDisplay = function() {
 				width:BOARD_WIDTH, 
 				height:BOARD_HEIGHT
 			});
-			document.body.appendChild(display.getContainer());
+			document.getElementById("display").appendChild(display.getContainer());
 	}
 	return display;
 }

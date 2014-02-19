@@ -1,9 +1,28 @@
 /* CSS declarations go here */
 
+body {
+	margin:20px;
+	background:url('/bg.gif');
+	font-family:"Trebuchet MS", Arial, Helvetica;
+}
+
 .user_widget {
 	float: right;
 }
 
+#showoff ul {
+	list-style:none;	
+}
+
+#showoff li {
+	padding-bottom:15px;
+}
+
+#display {
+	float:left;
+	margin-right:20px;
+}
+
 #showoff {
-	float: right;
+	float:left;
 }
