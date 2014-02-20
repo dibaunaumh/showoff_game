@@ -8,7 +8,6 @@ Meteor.publish("showoffs", function() {
 
 
 
-
 Accounts.onCreateUser(function(options, user) {
 	
     if (user.services.google){
