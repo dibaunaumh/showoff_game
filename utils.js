@@ -5,8 +5,8 @@ getRandomLocation = function(w, h) {
 }
 
 generateRandomColor = function() {
-	var r = Math.round(Math.random() * 255);
-	var g = Math.round(Math.random() * 255);
-	var b = Math.round(Math.random() * 255);
+	var r = 128 + Math.round(Math.random() * 127);
+	var g = 128 + Math.round(Math.random() * 127);
+	var b = 128 + Math.round(Math.random() * 127);
 	return "rgb(" + r + "," +  g + "," +  b + ")";
 }

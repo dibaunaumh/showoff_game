@@ -29,16 +29,16 @@
   <table>
 	  <tr>
 		  <td>&nbsp;</td>
-		  <td align="center"><button class="btn btn-mini" type="button" id="move-up"><i class="icon-arrow-up"></i></button></td>
+		  <td align="center"><button class="btn btn-large" type="button" id="move-up"><i class="icon-arrow-up"></i></button></td>
 		  <td>&nbsp;</td>
 	  </tr>
-	  <tr><td><button class="btn btn-mini" type="button" id="move-left"><i class="icon-arrow-left"></i></button></td>
-		  <td><button class="btn btn-mini btn-primary" id="show-off">Show off</button></td>
-		  <td><button class="btn btn-mini" type="button" id="move-right"><i class="icon-arrow-right"></i></button></td>
+	  <tr><td><button class="btn btn-large" type="button" id="move-left"><i class="icon-arrow-left"></i></button></td>
+		  <td><button class="btn btn-large btn-primary" id="show-off">Show off</button></td>
+		  <td><button class="btn btn-large" type="button" id="move-right"><i class="icon-arrow-right"></i></button></td>
 	  </tr>
 	  <tr>
 		  <td>&nbsp;</td>
-		  <td align="center"><button class="btn btn-mini" type="button" id="move-down"><i class="icon-arrow-down"></i></button></td>
+		  <td align="center"><button class="btn btn-large" type="button" id="move-down"><i class="icon-arrow-down"></i></button></td>
 		  <td>&nbsp;</td>
 	  </tr>
   </table>
@@ -50,7 +50,7 @@
     	{{#if current_showoff}}
   		<h4>
   			{{current_showoff.name}}
-  			<button class="btn btn-small" id="like"><i class="icon-thumbs-up"></i></button>
+  			<a href="#" class="like"><i class="icon-thumbs-up"></i></a>
   		</h4>
   		<iframe width="100%" height="255px" src="{{showoff_url}}">
   		</iframe>
@@ -59,7 +59,9 @@
 		<h4>Showoffs</h4>
 		<ul>
 			{{#each list}}
-			<li><img src="{{user_picture}}" alt="{{user_name}}" width="24px">{{name}} ({{likes}} likes)
+			<li><img src="{{user_picture}}" alt="{{user_name}}" width="24px">{{name}}
+			{{#if currentUser}}<a href="#" class="like" showoff="{{_id}}"><i class="icon-thumbs-up"></i></a>{{/if}}
+			{{#if likes}}<span class="label label-info">{{likes}} liked this</span>{{/if}}
 			{{/each}}
 		</ul>
 		{{/unless}}

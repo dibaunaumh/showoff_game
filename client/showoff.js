@@ -47,8 +47,14 @@ Template.showoff.helpers({
 });
 
 Template.showoff.events({
-	'click #like': function() {
-		addLike(Session.get("current_showoff"));
+	'click .like': function(e) {
+		var showoff = Session.get("current_showoff");
+		var $el = $(e.target);
+		var showoffId = $el.attr("showoff") || $el.parent().attr("showoff");
+		if (showoffId) {
+			showoff = Showoffs.findOne({_id: showoffId});
+		};
+		addLike(showoff);
 	}
 });
 
@@ -71,11 +77,11 @@ Template.game.rendered = function() {
 					var loc = x + "," + y;
 					var p = playerLocation[loc];
 					var s = showoffLocation[loc];
-					if (p) {
-						self.display.draw(x, y, p.glyph, p.color);
-					}
 					if (s) {
 						self.display.draw(x, y, "#", s.color, "white");
+					}
+					if (p) {
+						self.display.draw(x, y, p.glyph, p.color);
 					}
 				}
 			}

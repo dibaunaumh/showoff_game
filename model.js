@@ -1,4 +1,4 @@
-BOARD_WIDTH = 60;
+BOARD_WIDTH = 80;
 BOARD_HEIGHT = 25;
 
 Players = new Meteor.Collection("players");
