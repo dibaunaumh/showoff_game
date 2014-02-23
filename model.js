@@ -1,5 +1,5 @@
 BOARD_WIDTH = 80;
-BOARD_HEIGHT = 25;
+BOARD_HEIGHT = 30;
 
 Players = new Meteor.Collection("players");
 Showoffs = new Meteor.Collection("showoffs");
